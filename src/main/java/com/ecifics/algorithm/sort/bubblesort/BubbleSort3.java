@@ -8,31 +8,26 @@ package com.ecifics.algorithm.sort.bubblesort;
 public class BubbleSort3 {
 
     public void bubbleSort(int[] arr) {
-
-        //最后一个无序子列的末尾下标
-        int indexOfLastUnsortedElement = arr.length - 1;
-
-        //上次交换的数组元素下标
+        int n = arr.length;
+        int indexOfLastUnsortedElem = n - 1;
+        boolean isSwapped = true;
         int swappedIndex = -1;
 
-        //将isSwapped设置为true用于启动while循环
-        boolean isSwapped = true;
-
-        while(isSwapped) {
+        while (isSwapped) {
             isSwapped = false;
 
-            for (int i = 0; i < indexOfLastUnsortedElement; ++i) {
+            for (int i = 0; i < indexOfLastUnsortedElem; ++i) {
                 if (arr[i] > arr[i + 1]) {
-                    int temp = arr[i + 1];
-                    arr[i + 1] = arr[i];
-                    arr[i] = temp;
+                    int tmp = arr[i];
+                    arr[i] = arr[i + 1];
+                    arr[i + 1] = tmp;
 
-                    isSwapped = true;
                     swappedIndex = i;
+                    isSwapped = true;
                 }
             }
 
-            indexOfLastUnsortedElement = swappedIndex;
+            indexOfLastUnsortedElem = swappedIndex;
         }
     }
 }

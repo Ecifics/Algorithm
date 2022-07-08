@@ -9,22 +9,23 @@ public class BubbleSort2 {
 
     public void bubbleSort(int[] arr) {
         int n = arr.length;
+        boolean isSwapped = false;
         for (int i = 0; i < n - 1; ++i) {
-            //用于标记数组内元素是否发生了交换
-            boolean isSwapped = false;
-            for (int j = 0; j < n - i - 1; ++j) {
+            for (int j = 0; j < n - 1 - i; ++j) {
                 if (arr[j] > arr[j + 1]) {
-                    int temp = arr[j + 1];
-                    arr[j + 1] = arr[j];
-                    arr[j] = temp;
-
+                    int temp = arr[j];
+                    arr[j] = arr[j + 1];
+                    arr[j + 1] = temp;
                     isSwapped = true;
                 }
             }
-
+            // 未发生交换
             if (!isSwapped) {
                 break;
             }
+
+            // 发生交换
+            isSwapped = false;
         }
     }
 }

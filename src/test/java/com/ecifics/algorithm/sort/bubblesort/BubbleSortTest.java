@@ -13,8 +13,8 @@ public class BubbleSortTest {
     public void testBubbleSort() {
         BubbleSort3 bubbleSort = new BubbleSort3();
 
-        //int[] arr = {9, 8, 10, 2525, 2, 3, 50, 2, 10, 4};
-        int[] arr = {1, 2, 3, 4, 5, 6};
+        int[] arr = {9, 8, 10, 2525, 2, 3, 50, 2, 10, 4};
+        //int[] arr = {1, 2, 3, 4, 5, 6};
         bubbleSort.bubbleSort(arr);
 
         for (int num : arr) {
