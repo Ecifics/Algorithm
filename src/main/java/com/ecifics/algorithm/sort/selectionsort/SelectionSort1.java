@@ -2,7 +2,7 @@ package com.ecifics.algorithm.sort.selectionsort;
 
 /**
  * @author Ecifics
- * @Description TODO
+ * @Description 选择排序
  * @date 7/8/2022-7:33 PM
  */
 public class SelectionSort1 {

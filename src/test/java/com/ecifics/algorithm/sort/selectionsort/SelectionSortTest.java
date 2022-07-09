@@ -4,7 +4,7 @@ import org.junit.jupiter.api.Test;
 
 /**
  * @author Ecifics
- * @Description TODO
+ * @Description 选择排序测试
  * @date 7/8/2022-7:38 PM
  */
 public class SelectionSortTest {

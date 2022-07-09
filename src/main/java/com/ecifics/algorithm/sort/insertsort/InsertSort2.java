@@ -2,7 +2,7 @@ package com.ecifics.algorithm.sort.insertsort;
 
 /**
  * @author Ecifics
- * @Description TODO
+ * @Description 插入排序
  * @date 7/8/2022-10:38 PM
  */
 public class InsertSort2 {
