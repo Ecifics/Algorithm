@@ -7,55 +7,56 @@ package com.ecifics.algorithm.sort.quicksort;
  */
 public class QuickSort {
 
-    public void quickSort(int[] arr) {
-        quickSort(arr, 0, arr.length - 1);
+    public void quickSort(int[] nums) {
+        quickSort(nums, 0, nums.length - 1);
     }
 
-    private void quickSort(int[] arr, int start, int end) {
+    private void quickSort(int[] nums, int start, int end) {
         if (start >= end) {
             return ;
         }
 
-        int middle = partition(arr, start, end);
-        quickSort(arr, start, middle - 1);
-        quickSort(arr, middle + 1, end);
+        int middle = partition(nums, start, end);
+        quickSort(nums, start, middle - 1);
+        quickSort(nums, middle + 1, end);
     }
 
-    private int partition(int[] arr, int start, int end) {
-        // 选择第一个元素作为基数
-        int pivot = arr[start];
-        // 设置left和right两者指针，分别从数组两头向中间遍历
+    private int partition(int[] nums, int start, int end) {
+        // 将第一个元素设置为基数
+        int pivot = nums[start];
         int left = start + 1;
         int right = end;
 
         while (left < right) {
-            // 寻找位于数组前端大于基数的数用于交换到后半部分数组中
-            while (left < right && arr[left] < pivot) {
+            while (left < right && nums[left] <= pivot) {
                 ++left;
             }
-            // 寻找位于数组后端小于基数的
-            while (left < right && arr[right] > pivot) {
+
+            while (left < right && nums[right] >= pivot) {
                 --right;
             }
 
-            swap(arr, left, right);
+            if (left < right) {
+                swap(nums, left, right);
+                ++left;
+                --right;
+            }
         }
 
-        // 将基数插入对应的位置
-        if (left == right) {
+        if (right == left && nums[right] > pivot) {
             --right;
         }
 
         if (right != start) {
-            swap(arr, start, right);
+            swap(nums, right, start);
         }
 
         return right;
     }
 
-    private void swap(int[] arr, int i, int j) {
-        int temp = arr[i];
-        arr[i] = arr[j];
-        arr[j] = temp;
+    private void swap(int[] nums, int i, int j) {
+        int temp = nums[i];
+        nums[i] = nums[j];
+        nums[j] = temp;
     }
 }
